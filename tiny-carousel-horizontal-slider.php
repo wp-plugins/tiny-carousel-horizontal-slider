@@ -4,7 +4,7 @@
 Plugin Name: Tiny Carousel Horizontal Slider
 Description: This is Jquery based image horizontal slider plugin, it is using tiny carousel light weight jquery script to the slideshow.
 Author: Gopi.R
-Version: 5.0
+Version: 5.1
 Plugin URI: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
 Author URI: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
 Donate link: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
@@ -114,8 +114,8 @@ $tch = $tch . "<style type='text/css' media='screen'>
 		$tch = $tch . '</div>';
 		
 		$tch = $tch . '<script type="text/javascript">';
-		$tch = $tch . '$(document).ready(function(){';
-			$tch = $tch . "$('#tiny-carousel-slider1').tinycarousel({ start: 1, display: ".$tch_display.", controls: ".$tch_controls.", interval: ".$tch_interval.", intervaltime: ".$tch_intervaltime.", duration: ".$tch_duration." });";
+		$tch = $tch . 'jQuery(document).ready(function(){';
+			$tch = $tch . "jQuery('#tiny-carousel-slider1').tinycarousel({ start: 1, display: ".$tch_display.", controls: ".$tch_controls.", interval: ".$tch_interval.", intervaltime: ".$tch_intervaltime.", duration: ".$tch_duration." });";
 		$tch = $tch . '});';
 		$tch = $tch . '</script>';
 	}
@@ -150,10 +150,9 @@ function TinyCarousel_install()
 	}
 }
 
-
 function TinyCarousel_deactivation() 
 {
-	
+		// No action required.
 }
 
 function TinyCarousel_admin()
@@ -175,7 +174,7 @@ function TinyCarousel_add_javascript_files()
 {
 	if (!is_admin())
 	{
-		wp_enqueue_script( 'jquery-1.4.2.min', get_option('siteurl').'/wp-content/plugins/tiny-carousel-horizontal-slider/inc/jquery-1.4.2.min.js');
+		wp_enqueue_script('jquery');
 		wp_enqueue_script( 'jquery.tinycarousel.min', get_option('siteurl').'/wp-content/plugins/tiny-carousel-horizontal-slider/inc/jquery.tinycarousel.min.js');
 	}
 }   

@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-sli
 Plugin URI: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
 Tags: Tiny, Carousel, Horizontal, Slider
 Requires at least: 3.0
-Tested up to: 3.4.2
-Stable tag: 5.0
+Tested up to: 3.5
+Stable tag: 5.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,9 +59,11 @@ Plugin configuration
 == Changelog ==
 
 = 1.0 =
+
 First version
 
 = 2.0 =
+
 JavaScript loaded by using the wp_enqueue_scripts hook (instead of the init hook)
 
 Slight change in the short code, Please find the new short code for your gallery
@@ -70,20 +72,31 @@ Old: [TINY-CAROUSEL-SLIDER:1]
 New: [tiny-carousel-slider id="1"]
 
 = 3.0 =
+
 Fixed minute uppercase issue
 
 = 4.0 =
+
 New demo link
 
 = 5.0 =
+
 Tested up to 3.4.2
+
+= 5.1 =
+
+Tested up to WordPress 3.5
+Avoid registering the alternate jQuery.
+From this version we are using existing wordpress jQuery.
 
 == Upgrade Notice ==
 
 = 1.0 =
+
 First version
 
 = 2.0 =
+
 JavaScript loaded by using the wp_enqueue_scripts hook (instead of the init hook)
 
 Slight change in the short code, Please find the new short code for your gallery
@@ -92,10 +105,19 @@ Old: [TINY-CAROUSEL-SLIDER:1]
 New: [tiny-carousel-slider id="1"]
 
 = 3.0 =
+
 Fixed minute uppercase issue
 
 = 4.0 =
+
 New demo link
 
 = 5.0 =
+
 Tested up to 3.4.2
+
+= 5.1 =
+
+Tested up to WordPress 3.5
+Avoid registering the alternate jQuery.
+From this version we are using existing wordpress jQuery.
