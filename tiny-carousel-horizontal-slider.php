@@ -4,7 +4,7 @@
 Plugin Name: Tiny Carousel Horizontal Slider
 Description: This is Jquery based image horizontal slider plugin, it is using tiny carousel light weight jquery script to the slideshow.
 Author: Gopi.R
-Version: 5.1
+Version: 6.0
 Plugin URI: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
 Author URI: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
 Donate link: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
@@ -14,6 +14,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 global $wpdb, $wp_version;
 define("TinyCarouselTable", $wpdb->prefix . "TinyCarousel");
+define("TinyCarousel_UNIQUE_NAME", "tiny-carousel-horizontal-slider");
+define("TinyCarousel_TITLE", "Tiny carousel horizontal slider");
+define('TinyCarousel_FAV', 'http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/');
+define('TinyCarousel_LINK', 'Check official website for more information <a target="_blank" href="'.TinyCarousel_FAV.'">click here</a>');
 
 add_shortcode( 'tiny-carousel-slider', 'TinyCarousel_shortcode' );
 
@@ -157,12 +161,28 @@ function TinyCarousel_deactivation()
 
 function TinyCarousel_admin()
 {
-	include_once("image-management.php");
+	global $wpdb;
+	$current_page = isset($_GET['ac']) ? $_GET['ac'] : '';
+	switch($current_page)
+	{
+		case 'edit':
+			include('pages/image-management-edit.php');
+			break;
+		case 'add':
+			include('pages/image-management-add.php');
+			break;
+		case 'set':
+			include('pages/widget-setting.php');
+			break;
+		default:
+			include('pages/image-management-show.php');
+			break;
+	}
 }
 
 function TinyCarousel_add_to_menu() 
 {
-	add_options_page('Tiny carousel', 'Tiny carousel', 'manage_options', __FILE__, 'TinyCarousel_admin' );
+	add_options_page('Tiny carousel', 'Tiny carousel', 'manage_options', 'tiny-carousel-horizontal-slider', 'TinyCarousel_admin' );
 }
 
 if (is_admin()) 

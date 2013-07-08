@@ -48,7 +48,7 @@ function tch_submit()
 	}
 	else if(document.tch_form.tch_folder.value=="")
 	{
-		alert("Please select the image folder location.\n Example: wp-content/plugins/tiny-carousel-horizontal-slider/images/")
+		alert("Please enter the image folder location.\nExample: wp-content/plugins/tiny-carousel-horizontal-slider/images/")
 		document.tch_form.tch_folder.focus();
 		return false;
 	}
@@ -58,14 +58,14 @@ function tch_delete(id)
 {
 	if(confirm("Do you want to delete this record?"))
 	{
-		document.frm_tch_display.action="options-general.php?page=tiny-carousel-horizontal-slider/tiny-carousel-horizontal-slider.php&AC=DEL&DID="+id;
+		document.frm_tch_display.action="options-general.php?page=tiny-carousel-horizontal-slider&ac=del&did="+id;
 		document.frm_tch_display.submit();
 	}
 }	
 
 function tch_redirect()
 {
-	window.location = "options-general.php?page=tiny-carousel-horizontal-slider/tiny-carousel-horizontal-slider.php";
+	window.location = "options-general.php?page=tiny-carousel-horizontal-slider";
 }
 
 function tch_help()
