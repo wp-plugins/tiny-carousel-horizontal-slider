@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-sli
 Plugin URI: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
 Tags: Tiny, Carousel, Horizontal, Slider
 Requires at least: 3.2
-Tested up to: 3.6
-Stable tag: 6.0
+Tested up to: 3.8
+Stable tag: 6.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,14 +24,14 @@ This is Jquery based image horizontal slider plugin, it is using tiny carousel l
 
 Plugin advantage
 
-* Easy to customize.
-* Support all browser.
-* Automatically pauses on mouse over.
-* Short code available for pages and posts.
-* Supports navigation by button.
+* Easy to customize
+* Support all browser
+* Automatically pauses on mouse over
+* Short code available for pages and posts
+* Supports navigation by button
 * Option to set number of images to move at a time
-* Option to set a interval for automatic slide.
-
+* Option to set a interval for automatic slide
+* Supports localization
 
 Plugin configuration
 
@@ -55,6 +55,8 @@ Plugin configuration
 == Screenshots ==
 
 1. http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
+
+2. http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
 
 == Changelog ==
 
@@ -95,6 +97,13 @@ Tested up to 3.6
 Added few security features.
 New admin layout.
 
+= 6.1 =
+
+1. Tested up to 3.8 (Beta)
+2. Now this plugin supports localization (or internationalization). i.e. option to translate into other languages. 
+Plugin *.po file (TinyCarousel.po) available in the languages folder. Translators Welcome.
+3. Supports network multisite website (Needs to create table manually).
+
 == Upgrade Notice ==
 
 = 1.0 =
@@ -133,3 +142,10 @@ From this version we are using existing wordpress jQuery.
 Tested up to 3.6
 Added few security features.
 New admin layout.
+
+= 6.1 =
+
+1. Tested up to 3.8 (Beta)
+2. Now this plugin supports localization (or internationalization). i.e. option to translate into other languages. 
+Plugin *.po file (TinyCarousel.po) available in the languages folder. Translators Welcome.
+3. Supports network multisite website (Needs to create table manually).

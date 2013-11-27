@@ -1,10 +1,9 @@
 <?php
-
 /*
 Plugin Name: Tiny Carousel Horizontal Slider
 Description: This is Jquery based image horizontal slider plugin, it is using tiny carousel light weight jquery script to the slideshow.
 Author: Gopi.R
-Version: 6.0
+Version: 6.1
 Plugin URI: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
 Author URI: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
 Donate link: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
@@ -14,10 +13,19 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 global $wpdb, $wp_version;
 define("TinyCarouselTable", $wpdb->prefix . "TinyCarousel");
-define("TinyCarousel_UNIQUE_NAME", "tiny-carousel-horizontal-slider");
-define("TinyCarousel_TITLE", "Tiny carousel horizontal slider");
 define('TinyCarousel_FAV', 'http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/');
-define('TinyCarousel_LINK', 'Check official website for more information <a target="_blank" href="'.TinyCarousel_FAV.'">click here</a>');
+
+if ( ! defined( 'TinyCarousel_BASENAME' ) )
+	define( 'TinyCarousel_BASENAME', plugin_basename( __FILE__ ) );
+	
+if ( ! defined( 'TinyCarousel_PLUGIN_NAME' ) )
+	define( 'TinyCarousel_PLUGIN_NAME', trim( dirname( TinyCarousel_BASENAME ), '/' ) );
+	
+if ( ! defined( 'TinyCarousel_PLUGIN_URL' ) )
+	define( 'TinyCarousel_PLUGIN_URL', WP_PLUGIN_URL . '/' . TinyCarousel_PLUGIN_NAME );
+	
+if ( ! defined( 'TinyCarousel_ADMIN_URL' ) )
+	define( 'TinyCarousel_ADMIN_URL', get_option('siteurl') . '/wp-admin/options-general.php?page=tiny-carousel-horizontal-slider' );
 
 add_shortcode( 'tiny-carousel-slider', 'TinyCarousel_shortcode' );
 
@@ -145,9 +153,8 @@ function TinyCarousel_install()
 		$sSql = $sSql . "`tch_folder` VARCHAR( 255 ) NOT NULL,";
 		$sSql = $sSql . "`tch_random` VARCHAR( 3 ) NOT NULL default 'NO',";
 		$sSql = $sSql . "PRIMARY KEY ( `tch_id` )";
-		$sSql = $sSql . ")";
+		$sSql = $sSql . ") ENGINE=MyISAM  DEFAULT CHARSET=utf8;";
 		$wpdb->query($sSql);
-		
 		$IsSql = "INSERT INTO `". TinyCarouselTable . "` (`tch_folder`)"; 
 		$sSql = $IsSql . " VALUES ('wp-content/plugins/tiny-carousel-horizontal-slider/images/');";
 		$wpdb->query($sSql);
@@ -156,7 +163,7 @@ function TinyCarousel_install()
 
 function TinyCarousel_deactivation() 
 {
-		// No action required.
+	// No action required.
 }
 
 function TinyCarousel_admin()
@@ -182,7 +189,7 @@ function TinyCarousel_admin()
 
 function TinyCarousel_add_to_menu() 
 {
-	add_options_page('Tiny carousel', 'Tiny carousel', 'manage_options', 'tiny-carousel-horizontal-slider', 'TinyCarousel_admin' );
+	add_options_page( __('Tiny carousel', 'TinyCarousel'), __('Tiny carousel', 'TinyCarousel'), 'manage_options', 'tiny-carousel-horizontal-slider', 'TinyCarousel_admin' );
 }
 
 if (is_admin()) 
@@ -199,6 +206,12 @@ function TinyCarousel_add_javascript_files()
 	}
 }   
 
+function TinyCarousel_textdomain() 
+{
+	  load_plugin_textdomain( 'TinyCarousel', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+}
+
+add_action('plugins_loaded', 'TinyCarousel_textdomain');
 add_action('wp_enqueue_scripts', 'TinyCarousel_add_javascript_files');
 register_activation_hook(__FILE__, 'TinyCarousel_install');
 register_deactivation_hook(__FILE__, 'TinyCarousel_deactivation');

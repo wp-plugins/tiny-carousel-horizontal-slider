@@ -13,7 +13,7 @@ $result = $wpdb->get_var($sSql);
 
 if ($result != '1')
 {
-	?><div class="error fade"><p><strong>Oops, selected details doesn't exist.</strong></p></div><?php
+	?><div class="error fade"><p><strong><?php _e('Oops, selected details doesnt exist.', 'TinyCarousel'); ?></strong></p></div><?php
 }
 else
 {
@@ -56,28 +56,28 @@ if (isset($_POST['tch_form_submit']) && $_POST['tch_form_submit'] == 'yes')
 	$form['tch_viewport'] = isset($_POST['tch_viewport']) ? $_POST['tch_viewport'] : '';
 	if ($form['tch_viewport'] == '')
 	{
-		$tch_errors[] = __('Please enter slider width. only number.', TinyCarousel_UNIQUE_NAME);
+		$tch_errors[] = __('Please enter slider width. only number.', 'TinyCarousel');
 		$tch_error_found = TRUE;
 	}
 
 	$form['tch_width'] = isset($_POST['tch_width']) ? $_POST['tch_width'] : '';
 	if ($form['tch_width'] == '')
 	{
-		$tch_errors[] = __('Please enter the image width. only number.', TinyCarousel_UNIQUE_NAME);
+		$tch_errors[] = __('Please enter the image width. only number.', 'TinyCarousel');
 		$tch_error_found = TRUE;
 	}
 	
 	$form['tch_height'] = isset($_POST['tch_height']) ? $_POST['tch_height'] : '';
 	if ($form['tch_height'] == '')
 	{
-		$tch_errors[] = __('Please enter the image height. only number.', TinyCarousel_UNIQUE_NAME);
+		$tch_errors[] = __('Please enter the image height. only number.', 'TinyCarousel');
 		$tch_error_found = TRUE;
 	}
 	
 	$form['tch_display'] = isset($_POST['tch_display']) ? $_POST['tch_display'] : '';
 	if ($form['tch_display'] == '')
 	{
-		$tch_errors[] = __('Please enter the display. only number.', TinyCarousel_UNIQUE_NAME);
+		$tch_errors[] = __('Please enter the display. only number.', 'TinyCarousel');
 		$tch_error_found = TRUE;
 	}
 	
@@ -88,7 +88,7 @@ if (isset($_POST['tch_form_submit']) && $_POST['tch_form_submit'] == 'yes')
 	$form['tch_folder'] = isset($_POST['tch_folder']) ? $_POST['tch_folder'] : '';
 	if ($form['tch_folder'] == '')
 	{
-		$tch_errors[] = __('Please select the image folder location.', TinyCarousel_UNIQUE_NAME);
+		$tch_errors[] = __('Please select the image folder location.', 'TinyCarousel');
 		$tch_error_found = TRUE;
 	}
 	
@@ -115,92 +115,95 @@ if (isset($_POST['tch_form_submit']) && $_POST['tch_form_submit'] == 'yes')
 			);
 		$wpdb->query($sSql);
 		
-		$tch_success = 'Details was successfully updated.';
+		$tch_success = __('Details was successfully updated.', 'TinyCarousel');
 	}
 }
 
 if ($tch_error_found == TRUE && isset($tch_errors[0]) == TRUE)
 {
-?>
-  <div class="error fade">
-    <p><strong><?php echo $tch_errors[0]; ?></strong></p>
-  </div>
-  <?php
+	?>
+	<div class="error fade">
+		<p><strong><?php echo $tch_errors[0]; ?></strong></p>
+	</div>
+	<?php
 }
 if ($tch_error_found == FALSE && strlen($tch_success) > 0)
 {
-?>
-  <div class="updated fade">
-    <p><strong><?php echo $tch_success; ?> <a href="<?php echo get_option('siteurl'); ?>/wp-admin/options-general.php?page=tiny-carousel-horizontal-slider">Click here</a> to view the details</strong></p>
-  </div>
-  <?php
+	?>
+	<div class="updated fade">
+		<p><strong><?php echo $tch_success; ?> <a href="<?php echo TinyCarousel_ADMIN_URL; ?>"><?php _e('Click here', 'TinyCarousel'); ?></a> <?php _e('to view the details', 'TinyCarousel'); ?></strong></p>
+	</div>
+	<?php
 }
 ?>
-<script language="JavaScript" src="<?php echo get_option('siteurl'); ?>/wp-content/plugins/tiny-carousel-horizontal-slider/pages/setting.js"></script>
+<script language="JavaScript" src="<?php echo TinyCarousel_PLUGIN_URL; ?>/pages/setting.js"></script>
 <div class="form-wrap">
 	<div id="icon-edit" class="icon32 icon32-posts-post"><br></div>
-	<h2><?php echo TinyCarousel_TITLE; ?></h2>
+	<h2><?php _e('Tiny carousel horizontal slider', 'TinyCarousel'); ?></h2>
 	<form name="tch_form" method="post" action="#" onsubmit="return tch_submit()"  >
-      <h3>Update details</h3>
+      <h3><?php _e('Update Details', 'TinyCarousel'); ?></h3>
 	  
-	  	<label for="tag-title">Slider width</label>
+	  	<label for="tag-title"><?php _e('Slider width', 'TinyCarousel'); ?></label>
 		<input name="tch_viewport" type="text" id="tch_viewport" value="<?php echo $form['tch_viewport']; ?>" maxlength="4" />
-		<p>Enter your galley width. (Ex: 450)</p>
+		<p><?php _e('Enter your galley width. (Ex: 450)', 'TinyCarousel'); ?></p>
 		
-		<label for="tag-title">Image width</label>
+		<label for="tag-title"><?php _e('Image width', 'TinyCarousel'); ?></label>
 		<input name="tch_width" type="text" id="tch_width" value="<?php echo $form['tch_width']; ?>" maxlength="4" />
-		<p>Enter your image width, We should upload the same size images in the folder. (Ex: 200)</p>
+		<p><?php _e('Enter your image width, We should upload the same size images in the folder. (Ex: 200)', 'TinyCarousel'); ?></p>
 		
-		<label for="tag-title">Image height</label>
+		<label for="tag-title"><?php _e('Image height', 'TinyCarousel'); ?></label>
 		<input name="tch_height" type="text" id="tch_height" value="<?php echo $form['tch_height']; ?>" maxlength="4" />
-		<p>Enter your image height, We should upload the same size images in the folder. (Ex: 150)</p>
+		<p><?php _e('Enter your image height, We should upload the same size images in the folder. (Ex: 150)', 'TinyCarousel'); ?></p>
 	  
-	  	<label for="tag-title">Image display</label>
+	  	<label for="tag-title"><?php _e('Image display', 'TinyCarousel'); ?></label>
 		<input name="tch_display" type="text" id="tch_display" value="<?php echo $form['tch_display']; ?>" maxlength="4" />
-		<p>Enter how many images you want to move at a time. (Ex: 1)</p>
+		<p><?php _e('Enter how many images you want to move at a time. (Ex: 1)', 'TinyCarousel'); ?></p>
 		
-		<label for="tag-title">Controls</label>
+		<label for="tag-title"><?php _e('Controls', 'TinyCarousel'); ?></label>
 		<select name="tch_controls" id="tch_controls">
 			<option value='true' <?php if($form['tch_controls'] == 'true') { echo "selected='selected'" ; } ?>>True</option>
 			<option value='false' <?php if($form['tch_controls'] == 'false') { echo "selected='selected'" ; } ?>>False</option>
 		</select>
-		<p>Do you like to use the Left, Right arrow button in your gallery?</p>
+		<p><?php _e('Do you like to use the Left, Right arrow button in your gallery?', 'TinyCarousel'); ?></p>
 		
-		<label for="tag-title">Auto interval</label>
+		<label for="tag-title"><?php _e('Auto interval', 'TinyCarousel'); ?></label>
 		<select name="tch_interval" id="tch_interval">
 			<option value='true' <?php if($form['tch_interval'] == 'true') { echo "selected='selected'" ; } ?>>True</option>
 			<option value='false' <?php if($form['tch_interval'] == 'false') { echo "selected='selected'" ; } ?>>False</option>
 		</select>
-		<p>Do you like to add auto interval to move one image from another?</p>
+		<p><?php _e('Do you like to add auto interval to move one image from another?', 'TinyCarousel'); ?></p>
 		
-		<label for="tag-title">Interval time</label>
+		<label for="tag-title"><?php _e('Interval time', 'TinyCarousel'); ?></label>
 		<input name="tch_intervaltime" type="text" id="tch_intervaltime" value="<?php echo $form['tch_intervaltime']; ?>" maxlength="4" />
-		<p>Auto interval time in millisecond. (Ex: 1500)</p>
+		<p><?php _e('Auto interval time in millisecond. (Ex: 1500)', 'TinyCarousel'); ?></p>
 		
-		<label for="tag-title">Duration</label>
+		<label for="tag-title"><?php _e('Duration', 'TinyCarousel'); ?></label>
 		<input name="tch_duration" type="text" id="tch_duration" value="<?php echo $form['tch_duration']; ?>" maxlength="4" />
-		<p>Animation duration in millisecond. (Ex: 1000)</p>
+		<p><?php _e('Animation duration in millisecond. (Ex: 1000)', 'TinyCarousel'); ?></p>
 		
-		<label for="tag-title">Random display</label>
+		<label for="tag-title"><?php _e('Random display', 'TinyCarousel'); ?></label>
 		<select name="tch_random" id="tch_random">
 			<option value='YES' <?php if($form['tch_random'] == 'YES') { echo "selected='selected'" ; } ?>>YES</option>
 			<option value='NO' <?php if($form['tch_random'] == 'NO') { echo "selected='selected'" ; } ?>>NO</option>
 		</select>
-		<p>Do you want to display images in random order?</p>
+		<p><?php _e('Do you want to display images in random order?', 'TinyCarousel'); ?></p>
 		
-		<label for="tag-title">Image folder location</label>
+		<label for="tag-title"><?php _e('Image folder location', 'TinyCarousel'); ?></label>
 		<input name="tch_folder" type="text" id="tch_folder" value="<?php echo $form['tch_folder']; ?>" size="100" maxlength="1024" />
-		<p>Example: wp-content/plugins/tiny-carousel-horizontal-slider/images/</p>
+		<p><?php _e('Example: wp-content/plugins/tiny-carousel-horizontal-slider/images/', 'TinyCarousel'); ?></p>
 	  
       <input name="tch_id" id="tch_id" type="hidden" value="<?php echo $form['tch_id']; ?>">
       <input type="hidden" name="tch_form_submit" value="yes"/>
       <p class="submit">
-        <input name="publish" lang="publish" class="button add-new-h2" value="Update Details" type="submit" />&nbsp;
-        <input name="publish" lang="publish" class="button add-new-h2" onclick="tch_redirect()" value="Cancel" type="button" />&nbsp;
-        <input name="Help" lang="publish" class="button add-new-h2" onclick="tch_help()" value="Help" type="button" />
+        <input name="publish" lang="publish" class="button add-new-h2" value="<?php _e('Update Details', 'TinyCarousel'); ?>" type="submit" />&nbsp;
+        <input name="publish" lang="publish" class="button add-new-h2" onclick="tch_redirect()" value="<?php _e('Cancel', 'TinyCarousel'); ?>" type="button" />&nbsp;
+        <input name="Help" lang="publish" class="button add-new-h2" onclick="tch_help()" value="<?php _e('Help', 'TinyCarousel'); ?>" type="button" />
       </p>
 	  <?php wp_nonce_field('tch_form_edit'); ?>
     </form>
 </div>
-<p class="description"><?php echo TinyCarousel_LINK; ?></p>
+<p class="description">
+	<?php _e('Check official website for more information', 'TinyCarousel'); ?>
+	<a target="_blank" href="<?php echo TinyCarousel_FAV; ?>"><?php _e('click here', 'TinyCarousel'); ?></a>
+</p>
 </div>
