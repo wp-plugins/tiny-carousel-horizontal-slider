@@ -4,7 +4,7 @@ Donate link: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-sl
 Author URI: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
 Plugin URI: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
 Tags: Tiny, Carousel, Horizontal, Slider
-Requires at least: 3.2
+Requires at least: 3.4
 Tested up to: 3.8
 Stable tag: 6.1
 License: GPLv2 or later
@@ -54,9 +54,9 @@ Plugin configuration
 
 == Screenshots ==
 
-1. http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
+1. Front Screen. http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
 
-2. http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
+2. Admin Screen. http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
 
 == Changelog ==
 
