@@ -2,8 +2,8 @@
 /*
 Plugin Name: Tiny Carousel Horizontal Slider
 Description: This is Jquery based image horizontal slider plugin, it is using tiny carousel light weight jquery script to the slideshow.
-Author: Gopi.R
-Version: 6.1
+Author: Gopi Ramasamy
+Version: 6.2
 Plugin URI: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
 Author URI: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
 Donate link: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
@@ -47,9 +47,8 @@ function TinyCarousel_shortcode( $atts )
 	}
 	$id = $atts['id'];
 	
-	
 	$sSql = "select * from ".TinyCarouselTable." where 1=1";
-	if(is_numeric(@$id)) 
+	if(is_numeric($id)) 
 	{
 		$sSql = $sSql . " and tch_id=$id";
 	}
@@ -103,35 +102,35 @@ function TinyCarousel_shortcode( $atts )
 	
 	if($imageli <> "")
 	{
-
-$buttonurl = $siteurl . "wp-content/plugins/tiny-carousel-horizontal-slider/buttons.png";
-$buttonsmargin = ($tch_height/2);
 $tch = $tch . "<style type='text/css' media='screen'>
-#tiny-carousel-slider1 { height: 1%; overflow:hidden; position: relative; padding: 0 0 10px;   }
-#tiny-carousel-slider1 .viewport { float: left; width: ".$tch_viewport."px; height: ".$tch_height."px; overflow: hidden; position: relative; }
-#tiny-carousel-slider1 .buttons { background:url('$buttonurl') no-repeat scroll 0 0 transparent; display: block; margin: ".$buttonsmargin."px 10px 0 0; background-position: 0 -38px; text-indent: -999em; float: left; width: 39px; height: 37px; overflow: hidden; position: relative; }
-#tiny-carousel-slider1 .next { background-position: 0 0; margin: ".$buttonsmargin."px 0 0 10px; }
+#tiny-carousel-slider1 { height: 1%; margin: 30px 0 0; overflow:hidden; position: relative; padding: 0 50px 10px;   }
+#tiny-carousel-slider1 .viewport { height: ".$tch_height."px; overflow: hidden; position: relative; }
+#tiny-carousel-slider1 .buttons { background: #C01313; border-radius: 35px; display: block; position: absolute;
+top: 40%; left: 0; width: 35px; height: 35px; color: #fff; font-weight: bold; text-align: center; line-height: 35px; text-decoration: none;
+font-size: 22px; }
+#tiny-carousel-slider1 .next { right: 0; left: auto;top: 40%; }
+#tiny-carousel-slider1 .buttons:hover{ color: #C01313;background: #fff; }
 #tiny-carousel-slider1 .disable { visibility: hidden; }
-#tiny-carousel-slider1 .overview { list-style: none; position: absolute; width: ".$tch_width."px; left: 0 top: 0; }
-#tiny-carousel-slider1 .overview li{ float: left; margin: 0 20px 0 0; padding: 1px; height: ".$tch_height."px; width: ".$tch_width."px;}
+#tiny-carousel-slider1 .overview { list-style: none; position: absolute; padding: 0; margin: 0; width: ".$tch_width."px; left: 0 top: 0; }
+#tiny-carousel-slider1 .overview li{ float: left; margin: 0 20px 0 0; padding: 1px; height: ".$tch_height."px; border: 1px solid #dcdcdc; width: ".$tch_width."px;}
 </style>";
+	
 		$tch = $tch . '<div id="tiny-carousel-slider1">';
-			$tch = $tch . '<a class="buttons prev" href="#">left</a>';
+			$tch = $tch . '<a class="buttons prev" href="#">&#60;</a>';
 			$tch = $tch . '<div class="viewport">';
 				$tch = $tch . '<ul class="overview">';
 					$tch = $tch . $imageli;
 				$tch = $tch . '</ul>';
 			$tch = $tch . '</div>';
-			$tch = $tch . '<a class="buttons next" href="#">right</a>';
+			$tch = $tch . '<a class="buttons next" href="#">&#62;</a>';
 		$tch = $tch . '</div>';
 		
 		$tch = $tch . '<script type="text/javascript">';
 		$tch = $tch . 'jQuery(document).ready(function(){';
-			$tch = $tch . "jQuery('#tiny-carousel-slider1').tinycarousel({ start: 1, display: ".$tch_display.", controls: ".$tch_controls.", interval: ".$tch_interval.", intervaltime: ".$tch_intervaltime.", duration: ".$tch_duration." });";
+			$tch = $tch . "jQuery('#tiny-carousel-slider1').tinycarousel({ buttons: ".$tch_controls.", interval: ".$tch_interval.", intervalTime: ".$tch_intervaltime.", animationTime: ".$tch_duration." });";
 		$tch = $tch . '});';
 		$tch = $tch . '</script>';
 	}
-	
 	return $tch;
 }
 
@@ -148,8 +147,8 @@ function TinyCarousel_install()
 		$sSql = $sSql . "`tch_display` int(11) NOT NULL default '1' ,";
 		$sSql = $sSql . "`tch_controls` VARCHAR( 5 ) NOT NULL default 'true',";
 		$sSql = $sSql . "`tch_interval` VARCHAR( 5 ) NOT NULL default 'true',";
-		$sSql = $sSql . "`tch_intervaltime` int(11) NOT NULL default '1500' ,";
-		$sSql = $sSql . "`tch_duration` int(11) NOT NULL default '1000' ,";
+		$sSql = $sSql . "`tch_intervaltime` int(11) NOT NULL default '3000' ,";
+		$sSql = $sSql . "`tch_duration` int(11) NOT NULL default '2000' ,";
 		$sSql = $sSql . "`tch_folder` VARCHAR( 255 ) NOT NULL,";
 		$sSql = $sSql . "`tch_random` VARCHAR( 3 ) NOT NULL default 'NO',";
 		$sSql = $sSql . "PRIMARY KEY ( `tch_id` )";
@@ -157,6 +156,9 @@ function TinyCarousel_install()
 		$wpdb->query($sSql);
 		$IsSql = "INSERT INTO `". TinyCarouselTable . "` (`tch_folder`)"; 
 		$sSql = $IsSql . " VALUES ('wp-content/plugins/tiny-carousel-horizontal-slider/images/');";
+		$wpdb->query($sSql);
+		$IsSql = "INSERT INTO `". TinyCarouselTable . "` (`tch_width`,`tch_height`,`tch_folder`)"; 
+		$sSql = $IsSql . " VALUES (100, 75, 'wp-content/plugins/tiny-carousel-horizontal-slider/images/100x75/');";
 		$wpdb->query($sSql);
 	}
 }
@@ -202,7 +204,7 @@ function TinyCarousel_add_javascript_files()
 	if (!is_admin())
 	{
 		wp_enqueue_script('jquery');
-		wp_enqueue_script( 'jquery.tinycarousel.min', get_option('siteurl').'/wp-content/plugins/tiny-carousel-horizontal-slider/inc/jquery.tinycarousel.min.js');
+		wp_enqueue_script( 'jquery.tinycarousel.min', get_option('siteurl').'/wp-content/plugins/tiny-carousel-horizontal-slider/inc/jquery.tinycarousel.js');
 	}
 }   
 

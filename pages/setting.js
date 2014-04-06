@@ -10,13 +10,14 @@
 
 function tch_submit()
 {
-	if((document.tch_form.tch_viewport.value=="") || (isNaN(document.tch_form.tch_viewport.value)))
-	{
-		alert("Please enter slider width. only number.")
-		document.tch_form.tch_viewport.focus();
-		return false;
-	}
-	else if((document.tch_form.tch_width.value=="") || (isNaN(document.tch_form.tch_width.value)))
+	//	if((document.tch_form.tch_viewport.value=="") || (isNaN(document.tch_form.tch_viewport.value)))
+	//	{
+	//		alert("Please enter slider width. only number.")
+	//		document.tch_form.tch_viewport.focus();
+	//		return false;
+	//	}
+	//	else 
+	if((document.tch_form.tch_width.value=="") || (isNaN(document.tch_form.tch_width.value)))
 	{
 		alert("Please enter the image width. only number.")
 		document.tch_form.tch_width.focus();

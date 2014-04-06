@@ -121,21 +121,21 @@ if ($tch_error_found == FALSE && strlen($tch_success) > 0)
 	<form name="tch_form" method="post" action="#" onsubmit="return tch_submit()"  >
       <h3><?php _e('Add details', 'TinyCarousel'); ?></h3>
       
-		<label for="tag-title"><?php _e('Slider width', 'TinyCarousel'); ?></label>
-		<input name="tch_viewport" type="text" id="tch_viewport" value="" maxlength="4" />
-		<p><?php _e('Enter your galley width. (Ex: 500)', 'TinyCarousel'); ?></p>
+		<!--<label for="tag-title"><?php //_e('Slider width', 'TinyCarousel'); ?></label>-->
+		<input name="tch_viewport" type="hidden" id="tch_viewport" value="500" maxlength="4" />
+		<!--<p><?php //_e('Enter your galley width. (Ex: 500)', 'TinyCarousel'); ?></p>-->
 		
 		<label for="tag-title"><?php _e('Image width', 'TinyCarousel'); ?></label>
 		<input name="tch_width" type="text" id="tch_width" value="" maxlength="4" />
-		<p><?php _e('Enter your image width, We should upload the same size images in the folder. (Ex: 200)', 'TinyCarousel'); ?></p>
+		<p><?php _e('Enter your image width, You should upload same size images in the folder. (Ex: 200)', 'TinyCarousel'); ?></p>
 		
 		<label for="tag-title"><?php _e('Image height', 'TinyCarousel'); ?></label>
 		<input name="tch_height" type="text" id="tch_height" value="" maxlength="4" />
-		<p><?php _e('Enter your image height, We should upload the same size images in the folder. (Ex: 150)', 'TinyCarousel'); ?></p>
+		<p><?php _e('Enter your image height, You should upload same size images in the folder. (Ex: 150)', 'TinyCarousel'); ?></p>
 	  
-	  	<label for="tag-title"><?php _e('Image display', 'TinyCarousel'); ?></label>
-		<input name="tch_display" type="text" id="tch_display" value="1" maxlength="4" />
-		<p><?php _e('Enter how many images you want to move at a time. (Ex: 1)', 'TinyCarousel'); ?></p>
+	  	<!--<label for="tag-title"><?php //_e('Image display', 'TinyCarousel'); ?></label>-->
+		<input name="tch_display" type="hidden" id="tch_display" value="1" maxlength="4" />
+		<!--<p><?php //_e('Enter how many images you want to move at a time. (Ex: 1)', 'TinyCarousel'); ?></p>-->
 		
 		<label for="tag-title"><?php _e('Controls', 'TinyCarousel'); ?></label>
 		<select name="tch_controls" id="tch_controls">
@@ -155,7 +155,7 @@ if ($tch_error_found == FALSE && strlen($tch_success) > 0)
 		<input name="tch_intervaltime" type="text" id="tch_intervaltime" value="1500" maxlength="4" />
 		<p><?php _e('Auto interval time in millisecond. (Ex: 1500)', 'TinyCarousel'); ?></p>
 		
-		<label for="tag-title"><?php _e('Duration', 'TinyCarousel'); ?></label>
+		<label for="tag-title"><?php _e('Animation Duration', 'TinyCarousel'); ?></label>
 		<input name="tch_duration" type="text" id="tch_duration" value="1000" maxlength="4" />
 		<p><?php _e('Animation duration in millisecond. (Ex: 1000)', 'TinyCarousel'); ?></p>
 		

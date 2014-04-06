@@ -63,11 +63,11 @@ if (isset($_POST['frm_tch_display']) && $_POST['frm_tch_display'] == 'yes')
           <tr>
             <th class="check-column" scope="col"><input type="checkbox" name="tch_group_item[]" /></th>
 			<th scope="col"><?php _e('Short code', 'TinyCarousel'); ?></th>
-			<th scope="col"><?php _e('Slider width', 'TinyCarousel'); ?></th>
+			<!--<th scope="col"><?php //_e('Slider width', 'TinyCarousel'); ?></th>-->
             <th scope="col"><?php _e('Image folder', 'TinyCarousel'); ?></th>
 			<th scope="col"><?php _e('Image width', 'TinyCarousel'); ?></th>
 			<th scope="col"><?php _e('Image height', 'TinyCarousel'); ?></th>
-			<th scope="col"><?php _e('Display', 'TinyCarousel'); ?></th>
+			<!--<th scope="col"><?php //_e('Display', 'TinyCarousel'); ?></th>-->
 			<th scope="col"><?php _e('Controls', 'TinyCarousel'); ?></th>
           </tr>
         </thead>
@@ -75,11 +75,11 @@ if (isset($_POST['frm_tch_display']) && $_POST['frm_tch_display'] == 'yes')
           <tr>
             <th class="check-column" scope="col"><input type="checkbox" name="tch_group_item[]" /></th>
 			<th scope="col"><?php _e('Short code', 'TinyCarousel'); ?></th>
-			<th scope="col"><?php _e('Slider width', 'TinyCarousel'); ?></th>
+			<!--<th scope="col"><?php //_e('Slider width', 'TinyCarousel'); ?></th>-->
             <th scope="col"><?php _e('Image folder', 'TinyCarousel'); ?></th>
 			<th scope="col"><?php _e('Image width', 'TinyCarousel'); ?></th>
 			<th scope="col"><?php _e('Image height', 'TinyCarousel'); ?></th>
-			<th scope="col"><?php _e('Display', 'TinyCarousel'); ?></th>
+			<!--<th scope="col"><?php //_e('Display', 'TinyCarousel'); ?></th>-->
 			<th scope="col"><?php _e('Controls', 'TinyCarousel'); ?></th>
           </tr>
         </tfoot>
@@ -99,11 +99,11 @@ if (isset($_POST['frm_tch_display']) && $_POST['frm_tch_display'] == 'yes')
 							<span class="trash"><a onClick="javascript:tch_delete('<?php echo $data['tch_id']; ?>')" href="javascript:void(0);"><?php _e('Delete', 'TinyCarousel'); ?></a></span> 
 						</div>
 						</td>
-						<td><?php echo $data['tch_viewport']; ?></td>
+						<!--<td><?php //echo $data['tch_viewport']; ?></td>-->
 						<td><?php echo $data['tch_folder']; ?></td>
 						<td><?php echo $data['tch_width']; ?></td>
 						<td><?php echo $data['tch_height']; ?></td>
-						<td><?php echo $data['tch_display']; ?></td>
+						<!--<td><?php //echo $data['tch_display']; ?></td>-->
 						<td><?php echo $data['tch_controls']; ?></td>
 					</tr>
 					<?php 
@@ -112,7 +112,7 @@ if (isset($_POST['frm_tch_display']) && $_POST['frm_tch_display'] == 'yes')
 			}
 			else
 			{
-				?><tr><td colspan="8" align="center"><?php _e('No records available.', 'TinyCarousel'); ?></td></tr><?php 
+				?><tr><td colspan="6" align="center"><?php _e('No records available.', 'TinyCarousel'); ?></td></tr><?php 
 			}
 			?>
 		</tbody>
