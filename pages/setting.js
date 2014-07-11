@@ -1,6 +1,6 @@
 /**
  *     Tiny Carousel Horizontal Slider
- *     Copyright (C) 2011 - 2013 www.gopiplus.com
+ *     Copyright (C) 2011 - 2014 www.gopiplus.com
  *     http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
  * 
  *     License: GPLv2 or later
@@ -10,13 +10,6 @@
 
 function tch_submit()
 {
-	//	if((document.tch_form.tch_viewport.value=="") || (isNaN(document.tch_form.tch_viewport.value)))
-	//	{
-	//		alert("Please enter slider width. only number.")
-	//		document.tch_form.tch_viewport.focus();
-	//		return false;
-	//	}
-	//	else 
 	if((document.tch_form.tch_width.value=="") || (isNaN(document.tch_form.tch_width.value)))
 	{
 		alert("Please enter the image width. only number.")

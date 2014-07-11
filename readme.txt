@@ -4,9 +4,9 @@ Donate link: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-sl
 Author URI: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
 Plugin URI: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
 Tags: Tiny, Carousel, Horizontal, Slider
-Requires at least: 3.4
+Requires at least: 3.6
 Tested up to: 3.9
-Stable tag: 6.2
+Stable tag: 6.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,21 +22,23 @@ Check official website for live demo [http://www.gopiplus.com/work/2012/05/26/ti
 
 This is Jquery based image horizontal slider plugin, it is using tiny carousel light weight jquery script to the slideshow. in the admin we have option to set image folder location and gallery style. in this plugin there is no option to add description for the images.
 
-Plugin advantage
+= Plugin advantage =
 
-* Easy to customize
-* Support all browser
-* Automatically pauses on mouse over
-* Short code available for pages and posts
-* Supports navigation by button
+* Easy to customize.
+* Support all browser.
+* Automatically pauses on mouse over.
+* Short code available for pages and posts.
+* Supports navigation by button.
 * Option to set number of images to move at a time
-* Option to set a interval for automatic slide
+* Option to set a interval for automatic slide.
 * Supports localization
+* Responsive
 
-Plugin configuration
+= Plugin configuration =
 
-* Paste the php code to your desired template location
-* Short code for pages and posts
+Add directly in the theme: Add plugin PHP code in your theme PHP file, for example if you want to add this slider in your website footer, just activate the plugin and add plugin PHP code in footer.php file.
+
+Short code for posts and pages: Use plugin short code in the pages or posts to render the slideshow in pages or posts.
 
 == Installation ==
 
@@ -44,11 +46,11 @@ Plugin configuration
 
 == Frequently Asked Questions ==
 
-= Q) How to change the arrow button? = 
+Q) How to change the arrow button?
 
-= Q) What type of image file formats can i use?  = 
+Q) What type of image file formats can i use?
 
-= Q) Any special instruction? = 
+Q) Any special instruction? 
 
 [Answer](http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/ "Answer")
 
@@ -110,6 +112,11 @@ Plugin *.po file (TinyCarousel.po) available in the languages folder. Translator
 2. Tiny Carousel scripts updated to 2.1.4
 3. Support Responsive
 
+= 6.3 =
+
+1. Issue on random image display has been fixed
+2. Added some security features
+
 == Upgrade Notice ==
 
 = 1.0 =
@@ -161,3 +168,8 @@ Plugin *.po file (TinyCarousel.po) available in the languages folder. Translator
 1. Tested up to 3.9
 2. Tiny Carousel scripts updated to 2.1.4
 3. Support Responsive
+
+= 6.3 =
+
+1. Issue on random image display has been fixed
+2. Added some security features

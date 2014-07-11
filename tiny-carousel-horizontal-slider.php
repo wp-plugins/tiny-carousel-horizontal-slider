@@ -3,7 +3,7 @@
 Plugin Name: Tiny Carousel Horizontal Slider
 Description: This is Jquery based image horizontal slider plugin, it is using tiny carousel light weight jquery script to the slideshow.
 Author: Gopi Ramasamy
-Version: 6.2
+Version: 6.3
 Plugin URI: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
 Author URI: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
 Donate link: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
@@ -12,7 +12,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 global $wpdb, $wp_version;
-define("TinyCarouselTable", $wpdb->prefix . "TinyCarousel");
+define("TinyCarouselTable", $wpdb->prefix . "tinycarousel");
 define('TinyCarousel_FAV', 'http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/');
 
 if ( ! defined( 'TinyCarousel_BASENAME' ) )
@@ -79,6 +79,8 @@ function TinyCarousel_shortcode( $atts )
 	
 	if(is_dir($tch_folder))
 	{
+		$tch_images	= array();
+		$i = 0;
 		$siteurl = get_option('siteurl');
 		if (substr($siteurl , -1) !== '/') 
 		{
@@ -91,9 +93,27 @@ function TinyCarousel_shortcode( $atts )
 			$tch_file = strtoupper($tch_file);
 			if(!is_dir($tch_file) && ((strpos($tch_file, '.JPG')>0) or (strpos($tch_file, '.GIF')>0) or (strpos($tch_file, '.PNG')>0) or (strpos($tch_file, '.JPEG')>0)))
 			{
-				$imageli = $imageli . '<li><img src="'.$siteurl . $tch_folder . $tch_file_nocaps .'" /></li>';
+				$tch_images[$i] = new stdClass;
+				$tch_images[$i]->name	= $siteurl . $tch_folder . $tch_file_nocaps;
+				$i++;
 			}
-		} 
+		}
+		
+		if($tch_random == "YES")
+		{
+			shuffle($tch_images);
+			foreach ($tch_images as $images)
+			{
+				$imageli = $imageli . '<li><img src="'. $images->name .'" /></li>';
+			}
+		}
+		else
+		{
+			foreach ($tch_images as $images)
+			{
+				$imageli = $imageli . '<li><img src="'. $images->name .'" /></li>';
+			}
+		}
 	}
 	else
 	{
