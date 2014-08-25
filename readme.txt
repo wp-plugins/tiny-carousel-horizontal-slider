@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-sli
 Plugin URI: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
 Tags: Tiny, Carousel, Horizontal, Slider
 Requires at least: 3.6
-Tested up to: 3.9
-Stable tag: 6.3
+Tested up to: 4.0
+Stable tag: 6.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -117,6 +117,10 @@ Plugin *.po file (TinyCarousel.po) available in the languages folder. Translator
 1. Issue on random image display has been fixed
 2. Added some security features
 
+= 6.4 =
+
+1. Tested up to 4.0
+
 == Upgrade Notice ==
 
 = 1.0 =
@@ -173,3 +177,7 @@ Plugin *.po file (TinyCarousel.po) available in the languages folder. Translator
 
 1. Issue on random image display has been fixed
 2. Added some security features
+
+= 6.4 =
+
+1. Tested up to 4.0
