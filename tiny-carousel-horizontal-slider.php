@@ -3,7 +3,7 @@
 Plugin Name: Tiny Carousel Horizontal Slider
 Description: This is Jquery based image horizontal slider plugin, it is using tiny carousel light weight jquery script to the slideshow.
 Author: Gopi Ramasamy
-Version: 6.4
+Version: 6.5
 Plugin URI: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
 Author URI: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
 Donate link: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
