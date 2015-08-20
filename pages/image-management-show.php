@@ -4,6 +4,7 @@
 if (isset($_POST['frm_tch_display']) && $_POST['frm_tch_display'] == 'yes')
 {
 	$did = isset($_GET['did']) ? $_GET['did'] : '0';
+	if(!is_numeric($did)) { die('<p>Are you sure you want to do this?</p>'); }
 	
 	$tch_success = '';
 	$tch_success_msg = FALSE;
@@ -62,7 +63,6 @@ if (isset($_POST['frm_tch_display']) && $_POST['frm_tch_display'] == 'yes')
       <table width="100%" class="widefat" id="straymanage">
         <thead>
           <tr>
-            <th class="check-column" scope="col"><input type="checkbox" name="tch_group_item[]" /></th>
 			<th scope="col"><?php _e('Short code', 'TinyCarousel'); ?></th>
 			<!--<th scope="col"><?php //_e('Slider width', 'TinyCarousel'); ?></th>-->
             <th scope="col"><?php _e('Image folder', 'TinyCarousel'); ?></th>
@@ -74,7 +74,6 @@ if (isset($_POST['frm_tch_display']) && $_POST['frm_tch_display'] == 'yes')
         </thead>
 		<tfoot>
           <tr>
-            <th class="check-column" scope="col"><input type="checkbox" name="tch_group_item[]" /></th>
 			<th scope="col"><?php _e('Short code', 'TinyCarousel'); ?></th>
 			<!--<th scope="col"><?php //_e('Slider width', 'TinyCarousel'); ?></th>-->
             <th scope="col"><?php _e('Image folder', 'TinyCarousel'); ?></th>
@@ -93,7 +92,6 @@ if (isset($_POST['frm_tch_display']) && $_POST['frm_tch_display'] == 'yes')
 				{
 					?>
 					<tr class="<?php if ($i&1) { echo'alternate'; } else { echo ''; }?>">
-						<td align="left"><input type="checkbox" value="<?php echo $data['tch_id']; ?>" name="tch_group_item[]"></th>
 						<td>[tiny-carousel-slider id="<?php echo $data['tch_id']; ?>"]
 						<div class="row-actions">
 							<span class="edit"><a title="Edit" href="<?php echo TinyCarousel_ADMIN_URL; ?>&amp;ac=edit&amp;did=<?php echo $data['tch_id']; ?>"><?php _e('Edit', 'TinyCarousel'); ?></a> | </span>
@@ -113,7 +111,7 @@ if (isset($_POST['frm_tch_display']) && $_POST['frm_tch_display'] == 'yes')
 			}
 			else
 			{
-				?><tr><td colspan="6" align="center"><?php _e('No records available.', 'TinyCarousel'); ?></td></tr><?php 
+				?><tr><td colspan="5" align="center"><?php _e('No records available.', 'TinyCarousel'); ?></td></tr><?php 
 			}
 			?>
 		</tbody>
