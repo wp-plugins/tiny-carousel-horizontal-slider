@@ -3,10 +3,12 @@
 Plugin Name: Tiny Carousel Horizontal Slider
 Description: This is Jquery based image horizontal slider plugin, it is using tiny carousel light weight jquery script to the slideshow.
 Author: Gopi Ramasamy
-Version: 6.7
+Version: 6.7.1
 Plugin URI: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
 Author URI: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
 Donate link: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
+Text Domain: tiny-carousel-horizontal-slider
+Domain Path: /languages
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -211,7 +213,7 @@ function TinyCarousel_admin()
 
 function TinyCarousel_add_to_menu() 
 {
-	add_options_page( __('Tiny carousel', 'TinyCarousel'), __('Tiny carousel', 'TinyCarousel'), 'manage_options', 'tiny-carousel-horizontal-slider', 'TinyCarousel_admin' );
+	add_options_page( __('Tiny carousel', 'tiny-carousel-horizontal-slider'), __('Tiny carousel', 'tiny-carousel-horizontal-slider'), 'manage_options', 'tiny-carousel-horizontal-slider', 'TinyCarousel_admin' );
 }
 
 if (is_admin()) 
@@ -230,7 +232,7 @@ function TinyCarousel_add_javascript_files()
 
 function TinyCarousel_textdomain() 
 {
-	  load_plugin_textdomain( 'TinyCarousel', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+	  load_plugin_textdomain( 'tiny-carousel-horizontal-slider', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 }
 
 add_action('plugins_loaded', 'TinyCarousel_textdomain');

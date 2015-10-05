@@ -20,7 +20,7 @@ if (isset($_POST['frm_tch_display']) && $_POST['frm_tch_display'] == 'yes')
 	
 	if ($result != '1')
 	{
-		?><div class="error fade"><p><strong><?php _e('Oops, selected details doesnt exist', 'TinyCarousel'); ?></strong></p></div><?php
+		?><div class="error fade"><p><strong><?php _e('Oops, selected details doesnt exist', 'tiny-carousel-horizontal-slider'); ?></strong></p></div><?php
 	}
 	else
 	{
@@ -38,7 +38,7 @@ if (isset($_POST['frm_tch_display']) && $_POST['frm_tch_display'] == 'yes')
 			
 			//	Set success message
 			$tch_success_msg = TRUE;
-			$tch_success = __('Selected record was successfully deleted.', 'TinyCarousel');
+			$tch_success = __('Selected record was successfully deleted.', 'tiny-carousel-horizontal-slider');
 		}
 	}
 	
@@ -50,8 +50,8 @@ if (isset($_POST['frm_tch_display']) && $_POST['frm_tch_display'] == 'yes')
 ?>
 <div class="wrap">
   <div id="icon-edit" class="icon32 icon32-posts-post"></div>
-    <h2><?php _e('Tiny carousel horizontal slider', 'TinyCarousel'); ?>
-	<a class="add-new-h2" href="<?php echo TinyCarousel_ADMIN_URL; ?>&amp;ac=add"><?php _e('Add New', 'TinyCarousel'); ?></a></h2>
+    <h2><?php _e('Tiny carousel horizontal slider', 'tiny-carousel-horizontal-slider'); ?>
+	<a class="add-new-h2" href="<?php echo TinyCarousel_ADMIN_URL; ?>&amp;ac=add"><?php _e('Add New', 'tiny-carousel-horizontal-slider'); ?></a></h2>
     <div class="tool-box">
 	<?php
 		$sSql = "SELECT * FROM `".TinyCarouselTable."` order by tch_id desc";
@@ -63,24 +63,24 @@ if (isset($_POST['frm_tch_display']) && $_POST['frm_tch_display'] == 'yes')
       <table width="100%" class="widefat" id="straymanage">
         <thead>
           <tr>
-			<th scope="col"><?php _e('Short code', 'TinyCarousel'); ?></th>
-			<!--<th scope="col"><?php //_e('Slider width', 'TinyCarousel'); ?></th>-->
-            <th scope="col"><?php _e('Image folder', 'TinyCarousel'); ?></th>
-			<th scope="col"><?php _e('Image width', 'TinyCarousel'); ?></th>
-			<th scope="col"><?php _e('Image height', 'TinyCarousel'); ?></th>
-			<!--<th scope="col"><?php //_e('Display', 'TinyCarousel'); ?></th>-->
-			<th scope="col"><?php _e('Controls', 'TinyCarousel'); ?></th>
+			<th scope="col"><?php _e('Short code', 'tiny-carousel-horizontal-slider'); ?></th>
+			<!--<th scope="col"><?php //_e('Slider width', 'tiny-carousel-horizontal-slider'); ?></th>-->
+            <th scope="col"><?php _e('Image folder', 'tiny-carousel-horizontal-slider'); ?></th>
+			<th scope="col"><?php _e('Image width', 'tiny-carousel-horizontal-slider'); ?></th>
+			<th scope="col"><?php _e('Image height', 'tiny-carousel-horizontal-slider'); ?></th>
+			<!--<th scope="col"><?php //_e('Display', 'tiny-carousel-horizontal-slider'); ?></th>-->
+			<th scope="col"><?php _e('Controls', 'tiny-carousel-horizontal-slider'); ?></th>
           </tr>
         </thead>
 		<tfoot>
           <tr>
-			<th scope="col"><?php _e('Short code', 'TinyCarousel'); ?></th>
-			<!--<th scope="col"><?php //_e('Slider width', 'TinyCarousel'); ?></th>-->
-            <th scope="col"><?php _e('Image folder', 'TinyCarousel'); ?></th>
-			<th scope="col"><?php _e('Image width', 'TinyCarousel'); ?></th>
-			<th scope="col"><?php _e('Image height', 'TinyCarousel'); ?></th>
-			<!--<th scope="col"><?php //_e('Display', 'TinyCarousel'); ?></th>-->
-			<th scope="col"><?php _e('Controls', 'TinyCarousel'); ?></th>
+			<th scope="col"><?php _e('Short code', 'tiny-carousel-horizontal-slider'); ?></th>
+			<!--<th scope="col"><?php //_e('Slider width', 'tiny-carousel-horizontal-slider'); ?></th>-->
+            <th scope="col"><?php _e('Image folder', 'tiny-carousel-horizontal-slider'); ?></th>
+			<th scope="col"><?php _e('Image width', 'tiny-carousel-horizontal-slider'); ?></th>
+			<th scope="col"><?php _e('Image height', 'tiny-carousel-horizontal-slider'); ?></th>
+			<!--<th scope="col"><?php //_e('Display', 'tiny-carousel-horizontal-slider'); ?></th>-->
+			<th scope="col"><?php _e('Controls', 'tiny-carousel-horizontal-slider'); ?></th>
           </tr>
         </tfoot>
 		<tbody>
@@ -94,8 +94,8 @@ if (isset($_POST['frm_tch_display']) && $_POST['frm_tch_display'] == 'yes')
 					<tr class="<?php if ($i&1) { echo'alternate'; } else { echo ''; }?>">
 						<td>[tiny-carousel-slider id="<?php echo $data['tch_id']; ?>"]
 						<div class="row-actions">
-							<span class="edit"><a title="Edit" href="<?php echo TinyCarousel_ADMIN_URL; ?>&amp;ac=edit&amp;did=<?php echo $data['tch_id']; ?>"><?php _e('Edit', 'TinyCarousel'); ?></a> | </span>
-							<span class="trash"><a onClick="javascript:tch_delete('<?php echo $data['tch_id']; ?>')" href="javascript:void(0);"><?php _e('Delete', 'TinyCarousel'); ?></a></span> 
+							<span class="edit"><a title="Edit" href="<?php echo TinyCarousel_ADMIN_URL; ?>&amp;ac=edit&amp;did=<?php echo $data['tch_id']; ?>"><?php _e('Edit', 'tiny-carousel-horizontal-slider'); ?></a> | </span>
+							<span class="trash"><a onClick="javascript:tch_delete('<?php echo $data['tch_id']; ?>')" href="javascript:void(0);"><?php _e('Delete', 'tiny-carousel-horizontal-slider'); ?></a></span> 
 						</div>
 						</td>
 						<!--<td><?php //echo $data['tch_viewport']; ?></td>-->
@@ -111,7 +111,7 @@ if (isset($_POST['frm_tch_display']) && $_POST['frm_tch_display'] == 'yes')
 			}
 			else
 			{
-				?><tr><td colspan="5" align="center"><?php _e('No records available.', 'TinyCarousel'); ?></td></tr><?php 
+				?><tr><td colspan="5" align="center"><?php _e('No records available.', 'tiny-carousel-horizontal-slider'); ?></td></tr><?php 
 			}
 			?>
 		</tbody>
@@ -121,20 +121,20 @@ if (isset($_POST['frm_tch_display']) && $_POST['frm_tch_display'] == 'yes')
       </form>	
 	  <div class="tablenav">
 	  <h2>
-	  <a class="button add-new-h2" href="<?php echo TinyCarousel_ADMIN_URL; ?>&amp;ac=add"><?php _e('Add New', 'TinyCarousel'); ?></a>
-	  <a class="button add-new-h2" target="_blank" href="<?php echo TinyCarousel_FAV; ?>"><?php _e('Help', 'TinyCarousel'); ?></a>
+	  <a class="button add-new-h2" href="<?php echo TinyCarousel_ADMIN_URL; ?>&amp;ac=add"><?php _e('Add New', 'tiny-carousel-horizontal-slider'); ?></a>
+	  <a class="button add-new-h2" target="_blank" href="<?php echo TinyCarousel_FAV; ?>"><?php _e('Help', 'tiny-carousel-horizontal-slider'); ?></a>
 	  </h2>
 	  </div>
 	  <div style="height:5px"></div>
-	<h3><?php _e('Plugin configuration option', 'TinyCarousel'); ?></h3>
+	<h3><?php _e('Plugin configuration option', 'tiny-carousel-horizontal-slider'); ?></h3>
 	<ol>
-		<li><?php _e('Add the plugin in the posts or pages using short code.', 'TinyCarousel'); ?></li>
-		<li><?php _e('Add directly in to the theme using PHP code.', 'TinyCarousel'); ?></li>
+		<li><?php _e('Add the plugin in the posts or pages using short code.', 'tiny-carousel-horizontal-slider'); ?></li>
+		<li><?php _e('Add directly in to the theme using PHP code.', 'tiny-carousel-horizontal-slider'); ?></li>
 	</ol>
 	<p class="description">
-	<?php _e('Check official website for more information', 'TinyCarousel'); ?>
-	<a target="_blank" href="<?php echo TinyCarousel_FAV; ?>"><?php _e('click here', 'TinyCarousel'); ?></a><br />
-	<?php _e('Dont upload your original images into plug-in folder. if you upload the images into plug-in folder, you may lose the images when you update the plug-in to next version.', 'TinyCarousel'); ?>
+	<?php _e('Check official website for more information', 'tiny-carousel-horizontal-slider'); ?>
+	<a target="_blank" href="<?php echo TinyCarousel_FAV; ?>"><?php _e('click here', 'tiny-carousel-horizontal-slider'); ?></a><br />
+	<?php _e('Dont upload your original images into plug-in folder. if you upload the images into plug-in folder, you may lose the images when you update the plug-in to next version.', 'tiny-carousel-horizontal-slider'); ?>
 	</p>
 	</div>
 </div>

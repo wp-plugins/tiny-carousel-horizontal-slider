@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-sli
 Plugin URI: http://www.gopiplus.com/work/2012/05/26/tiny-carousel-horizontal-slider-wordpress-plugin/
 Tags: Tiny, Carousel, Horizontal, Slider
 Requires at least: 3.6
-Tested up to: 4.3
-Stable tag: 6.7
+Tested up to: 4.3.1
+Stable tag: 6.7.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,6 +39,11 @@ This is Jquery based image horizontal slider plugin, it is using tiny carousel l
 Add directly in the theme: Add plugin PHP code in your theme PHP file, for example if you want to add this slider in your website footer, just activate the plugin and add plugin PHP code in footer.php file.
 
 Short code for posts and pages: Use plugin short code in the pages or posts to render the slideshow in pages or posts.
+
+= Translators =
+
+* Tamil (ta) - [Gopi Ramasamy](http://www.gopiplus.com/)
+* Polish (pl) - [Abdul Sattar](https://www.couponmachine.in/)
 
 == Installation ==
 
@@ -133,6 +138,10 @@ Plugin *.po file (TinyCarousel.po) available in the languages folder. Translator
 
 1. Tested up to 4.3
 
+= 6.7.1 =
+
+* Text Domain slug has been added for Language Packs.
+
 == Upgrade Notice ==
 
 = 1.0 =
@@ -205,3 +214,7 @@ Plugin *.po file (TinyCarousel.po) available in the languages folder. Translator
 = 6.7 =
 
 1. Tested up to 4.3
+
+= 6.7.1 =
+
+* Text Domain slug has been added for Language Packs.
